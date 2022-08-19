@@ -36,7 +36,6 @@ def login():
 @app.route('/index', methods=['GET', 'POST'])
 def model():
     if request.method=='POST':
-        global age, sex, bmi, children, smoker, region, prediction_val
         age = request.form['age']
         sex = request.form['sex']
         bmi = request.form['bmi']
@@ -51,9 +50,21 @@ def model():
         data = Predictions(age=age, sex=sex, bmi=bmi, children=children, smoker=smoker, region=region, pred=prediction_val)
         db.session.add(data)
         db.session.commit()
-    allpreds = Predictions.query.all()   
+    return render_template('index.html', prediction_text="Your insurace premium will be", prediction_val=prediction_val)
 
-    return render_template('index.html', prediction_text="Your insurace premium will be", prediction_val=prediction_val, allpreds=allpreds)
+@app.route('/bmi_cal', methods=['GET','POST'])
+def bmi_cal():
+    if request.method=='POST':
+        age = request.form['age']
+        height = request.form['height']
+
+    bmi = age/height**2
+    return render_template('index.html',bmi=bmi)
+
+@app.route('/predictions', methods=['GET','POST'])
+def predictions():
+    allpreds = Predictions.query.all() 
+    return render_template('predictions.html',allpreds=allpreds)
 
 @app.route('/analysis', methods=['GET','POST'])
 def analysis():
@@ -64,7 +75,7 @@ def delete(sno):
     data = Predictions.query.filter_by(sno=sno).first()
     db.session.delete(data)
     db.session.commit()
-    return redirect("/index")
+    return redirect("/predictions")
 
 
 if __name__ == "__main__":

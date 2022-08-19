@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+    <h4>All previous predictions</h4>
+
+    {% if allpreds|length == 0 %}
+
+    <div class="alert alert-dark" role="alert">
+        No predictions found!
+    </div>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">SNo</th>
+                <th scope="col">Age</th>
+                <th scope="col">Sex</th>
+                <th scope="col">BMI</th>
+                <th scope="col">Children</th>
+                <th scope="col">Smoker</th>
+                <th scope="col">Region</th>
+                <th scope="col">Predicted Values</th>
+                <th scope="col">Time</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for data in allpreds %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{data.age}}</td>
+                <td>{{data.sex}}</td>
+                <td>{{data.bmi}}</td>
+                <td>{{data.children}}</td>
+                <td>{{data.smoker}}</td>
+                <td>{{data.region}}</td>
+                <td>${{data.pred}}</td>
+                <td>{{data.date_created}}</td>
+                <td>
+                    <a href="/delete/{{data.sno}}" type="button"
+                        class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    {% endblock body %}
