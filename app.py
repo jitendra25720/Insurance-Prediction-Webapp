@@ -17,11 +17,11 @@ db = SQLAlchemy(app)
 class Predictions(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     age = db.Column(db.Integer, nullable=False)
-    sex = db.Column(db.Integer, nullable=False)
+    sex = db.Column(db.String(10), nullable=False)
     bmi = db.Column(db.Float, nullable=False)
     children = db.Column(db.Integer, nullable=False)
-    smoker = db.Column(db.Integer, nullable=False)
-    region = db.Column(db.Integer, nullable=False)
+    smoker = db.Column(db.String(5), nullable=False)
+    region = db.Column(db.String(10), nullable=False)
     pred = db.Column(db.Float, nullable = True)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     db.create_all()
@@ -44,22 +44,32 @@ def model():
         region = request.form['region']
         inputs = np.array([[age, sex, bmi, children, smoker, region]])
 
+        if sex == 1:
+            sex_db = "Male"
+        else:
+            sex_db = "Female"
+
+        if smoker == 1:
+            smoker_db = "Yes"
+        else:
+            smoker_db = "No"
+
+        if region == 0:
+            region_db = "southeast"
+        elif region == 1:
+            region_db = "southwest"
+        elif region == 2:
+            region_db = "northeast"
+        else:
+            region_db = "northwest"
+
         with open('model.pickle', 'rb') as f:
             mp = pickle.load(f)
         prediction_val = round(float(mp.predict(inputs)),4)
-        data = Predictions(age=age, sex=sex, bmi=bmi, children=children, smoker=smoker, region=region, pred=prediction_val)
+        data = Predictions(age=age, sex=sex_db, bmi=bmi, children=children, smoker=smoker_db, region=region_db, pred=prediction_val)
         db.session.add(data)
         db.session.commit()
-    return render_template('index.html', prediction_text="Your insurace premium will be", prediction_val=prediction_val)
-
-@app.route('/bmi_cal', methods=['GET','POST'])
-def bmi_cal():
-    if request.method=='POST':
-        age = request.form['age']
-        height = request.form['height']
-
-    bmi = age/height**2
-    return render_template('index.html',bmi=bmi)
+    return render_template('index.html', prediction_text="Your insurace premium will be $", prediction_val=prediction_val)
 
 @app.route('/predictions', methods=['GET','POST'])
 def predictions():
