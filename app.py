@@ -44,21 +44,21 @@ def model():
         region = request.form['region']
         inputs = np.array([[age, sex, bmi, children, smoker, region]])
 
-        if sex == 1:
+        if sex == '1':
             sex_db = "Male"
         else:
             sex_db = "Female"
 
-        if smoker == 1:
+        if smoker == '1':
             smoker_db = "Yes"
         else:
             smoker_db = "No"
 
-        if region == 0:
+        if region == '0':
             region_db = "southeast"
-        elif region == 1:
+        elif region == '1':
             region_db = "southwest"
-        elif region == 2:
+        elif region == '2':
             region_db = "northeast"
         else:
             region_db = "northwest"

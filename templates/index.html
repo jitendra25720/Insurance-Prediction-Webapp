@@ -5,134 +5,134 @@
 
 <!-- age	sex	bmi	children	smoker	region	expenses -->
 
-<div class="container my-5">
-  <h2>Insurance Premium Prediction</h2>
-</div>
-<div class="container my-5">
+<body>
+  <div class="container my-5 text-light">
+    <h2>Insurance Premium Prediction</h2>
+  </div>
+  <div class="container my-5">
 
-  <form class="row g-3" action="/index" method="post">
-    <div class="col-md-6">
-      <label for="age" class="form-label">Enter your age</label>
-      <input type="number" class="form-control" id="inputage" name="age" min=10 max=100 required>
-    </div>
+    <form class="row g-3" action="/index" method="post">
+      <div class="col-md-6">
+        <label for="age" class="form-label text-light">Enter your age</label>
+        <input type="number" class="form-control" id="inputage" name="age" min=10 max=100 required>
+      </div>
 
-    <div class="col-md-6">
-      <label for="sex" class="form-label">Choose your gender</label>
-      <select class="form-select" aria-label="Default select example" name="sex" required>
-        <option selected>Open this select gender</option>
-        <option value="1">Male</option>
-        <option value="0">Female</option>
-      </select>
-    </div>
+      <div class="col-md-6">
+        <label for="sex" class="form-label text-light">Choose your gender</label>
+        <select class="form-select" aria-label="Default select example" name="sex" required>
+          <option selected>Open this select gender</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+      </div>
 
-    <div class="col-md-6">
-      <label for="bmi" class="form-label">Enter your BMI (Don't know BMI?) <button type="button"
-          class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-          style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .50rem;">
-          Click here
-        </button>
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-          aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">BMI Calculator</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="calculator-container">
-                  <p>Enter your Height in <strong>meters:</strong> </p>
-                  <input class="height-input-field" type="text">
-                  <p>Enter your weight in <strong>kilograms:</strong> </p>
-                  <input class="weight-input-field" type="text"></br></br>
-                  <button class="calculate btn btn-outline-success"> Calculate</button>
+      <div class="col-md-6">
+        <label for="bmi" class="form-label text-light">Enter your BMI (Don't know BMI?) <button type="button"
+            class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .50rem;">
+            Click here
+          </button>
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">BMI Calculator</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                </br>
-                <p>Your BMI: </p>
-                <h5 class="result"></h5>
+                <div class="modal-body">
+                  <div class="calculator-container">
+                    <p>Enter your Height in <strong>meters:</strong> </p>
+                    <input class="height-input-field" type="text">
+                    <p>Enter your weight in <strong>kilograms:</strong> </p>
+                    <input class="weight-input-field" type="text"></br></br>
+                    <button class="calculate btn btn-outline-success"> Calculate</button>
+                  </div>
+                  </br>
+                  <p>Your BMI: </p>
+                  <h5 class="result"></h5>
 
-                <script> var heightInput = document.querySelector(".height-input-field");
-                  var weightInput = document.querySelector(".weight-input-field");
-                  var calculateButton = document.querySelector(".calculate");
-                  var result = document.querySelector(".result");
-                  var statement = document.querySelector(".result-statement");
-                  var BMI, height, weight;
+                  <script> var heightInput = document.querySelector(".height-input-field");
+                    var weightInput = document.querySelector(".weight-input-field");
+                    var calculateButton = document.querySelector(".calculate");
+                    var result = document.querySelector(".result");
+                    var statement = document.querySelector(".result-statement");
+                    var BMI, height, weight;
 
-                  calculateButton.addEventListener("click", () => {
+                    calculateButton.addEventListener("click", () => {
 
-                    height = heightInput.value;
-                    weight = weightInput.value;
-                    BMI = weight / (height ** 2);
-                    result.innerText = BMI;
-                  });
-                </script>
+                      height = heightInput.value;
+                      weight = weightInput.value;
+                      BMI = weight / (height ** 2);
+                      result.innerText = BMI;
+                    });
+                  </script>
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </label>
-      <input type="number" step=0.01 class="form-control" id="input bmi" name="bmi" min=5 max=70 required>
+        </label>
+        <input type="number" step=0.01 class="form-control" id="input bmi" name="bmi" min=5 max=70 required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="smoker" class="form-label text-light">Do you Smoke?</label>
+        <select class="form-select" aria-label="Default select example" name="smoker" required>
+          <option selected>Open this select</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="children" class="form-label text-light">Enter number of children</label>
+        <input type="number" min=0, max=20 class="form-control" id="inputchildren" name="children" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="region" class="form-label light text-light">Select your region</label>
+        <select class="form-select" aria-label="Default select example" name="region" required>
+          <option selected>Open this select region</option>
+          <option value="0">southeast</option>
+          <option value="1">southwest</option>
+          <option value="2">northeast</option>
+          <option value="3">northwest</option>
+        </select>
+      </div>
+
+      <div class="col-12 mx-auto" , style="width: 200px;">
+        <button type="submit" id="btnSubmit" class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+          </svg> <strong>Predict</strong></button>
+      </div>
+
+    </form>
+    </br>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+      </svg>
+      {{prediction_text}}<strong>{{prediction_val}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <div class="col-md-6">
-      <label for="smoker" class="form-label">Do you Smoke?</label>
-      <select class="form-select" aria-label="Default select example" name="smoker" required>
-        <option selected>Open this select</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-      </select>
-    </div>
-
-    <div class="col-md-6">
-      <label for="children" class="form-label">Enter number of children</label>
-      <input type="number" min=0, max=20 class="form-control" id="inputchildren" name="children" required>
-    </div>
-
-    <div class="col-md-6">
-      <label for="region" class="form-label">Select your region</label>
-      <select class="form-select" aria-label="Default select example" name="region" required>
-        <option selected>Open this select region</option>
-        <option value="0">southeast</option>
-        <option value="1">southwest</option>
-        <option value="2">northeast</option>
-        <option value="3">northwest</option>
-      </select>
-    </div>
-
-    <div class="col-12 mx-auto" , style="width: 200px;">
-      <button type="submit" id="btnSubmit" class="btn btn-outline-success"><svg xmlns="http://www.w3.org/2000/svg"
-          width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
-        </svg> <strong>Predict</strong></button>
-    </div>
-
-  </form>
-  </br>
-
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill"
-      viewBox="0 0 16 16">
-      <path
-        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-    </svg>
-    {{prediction_text}}<strong>{{prediction_val}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Preventing resubmission of form -->
+    <script>
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+      }
+    </script>
   </div>
-
-  <!-- Optional JavaScript; choose one of the two! -->
-  <!-- Preventing resubmission of form -->
-  <script>
-    if (window.history.replaceState) {
-      window.history.replaceState(null, null, window.location.href);
-    }
-  </script>
-  </body>
-</div>
-
 </body>
 
+</div>
 </html>
 
 <div class="container">

@@ -2,16 +2,16 @@
 {% block title %} Home{% endblock title %}
 {% block body %}
 
-<div class="container my-3">
+<div class="container my-3 text-light">
     <h4>All previous predictions</h4>
 
     {% if allpreds|length == 0 %}
 
-    <div class="alert alert-dark" role="alert">
+    <div class="alert alert-light" role="alert">
         No predictions found!
     </div>
     {% else %}
-    <table class="table">
+    <table class="table text-light">
         <thead>
             <tr>
                 <th scope="col">SNo</th>
@@ -41,7 +41,7 @@
                 <td>{{data.date_created}}</td>
                 <td>
                     <a href="/delete/{{data.sno}}" type="button"
-                        class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+                        class="btn btn-danger btn-sm mx-1">Delete</button>
                 </td>
             </tr>
 
