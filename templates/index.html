@@ -8,19 +8,19 @@
 
 <body>
   <div class="container my-5">
-    <h2>Insurance Premium Prediction</h2>
-    <h6>Project by Jitendra</h6>
+    <h2 style="font-family:Candara; color: rgba(0, 0, 0, 0.575);">Insurance Premium Prediction</h2>
+    <h5 style="font-family:Candara; color: rgb(3, 97, 53);" > Project by Jitendra</h5>
   </div>
   <div class="container my-5">
 
     <form class="row g-3" action="/index" method="post">
       <div class="col-md-6">
-        <label for="age" class="form-label text-light">Enter your age</label>
+        <label for="age" class="form-label"><h6>Enter your age</h6></label>
         <input type="number" class="form-control" id="inputage" name="age" min=10 max=100 required>
       </div>
 
       <div class="col-md-6">
-        <label for="sex" class="form-label">Choose your gender</label>
+        <label for="sex" class="form-label"><h6> Choose your gender</h6></label>
         <select class="form-select" aria-label="Default select example" name="sex" required>
           <option selected>Open this select gender</option>
           <option value="1">Male</option>
@@ -29,8 +29,9 @@
       </div>
 
       <div class="col-md-6">
-        <label for="bmi" class="form-label">Enter your BMI (Don't know BMI?) <button type="button"
-            class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+        <label for="bmi" class="form-label"><h6> Enter your BMI (Don't know BMI?) </h6>
+          <button type="button"
+            class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
             style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .50rem;">
             Click here
           </button>
@@ -79,7 +80,7 @@
       </div>
 
       <div class="col-md-6">
-        <label for="smoker" class="form-label">Do you Smoke?</label>
+        <label for="smoker" class="form-label"><h6> Do you Smoke?</h6></label>
         <select class="form-select" aria-label="Default select example" name="smoker" required>
           <option selected>Open this select</option>
           <option value="1">Yes</option>
@@ -88,12 +89,12 @@
       </div>
 
       <div class="col-md-6">
-        <label for="children" class="form-label">Enter number of children</label>
+        <label for="children" class="form-label"><h6> Enter number of children</h6></label>
         <input type="number" min=0, max=20 class="form-control" id="inputchildren" name="children" required>
       </div>
 
       <div class="col-md-6">
-        <label for="region" class="form-label">Select your region</label>
+        <label for="region" class="form-label"><h6>Select your region</h6> </label>
         <select class="form-select" aria-label="Default select example" name="region" required>
           <option selected>Open this select region</option>
           <option value="0">southeast</option>
