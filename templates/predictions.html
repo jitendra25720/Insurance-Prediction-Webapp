@@ -2,16 +2,16 @@
 {% block title %} Home{% endblock title %}
 {% block body %}
 
-<div class="container my-3 text-light">
+<div class="container my-3">
     <h4>All previous predictions</h4>
 
     {% if allpreds|length == 0 %}
 
-    <div class="alert alert-light" role="alert">
+    <div class="alert alert-dark" role="alert">
         No predictions found!
     </div>
     {% else %}
-    <table class="table text-light">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">SNo</th>

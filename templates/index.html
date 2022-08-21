@@ -7,7 +7,7 @@
 
 
 <body>
-  <div class="container my-5 text-light">
+  <div class="container my-5">
     <h2>Insurance Premium Prediction</h2>
     <h6>Project by Jitendra</h6>
   </div>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="col-md-6">
-        <label for="sex" class="form-label text-light">Choose your gender</label>
+        <label for="sex" class="form-label">Choose your gender</label>
         <select class="form-select" aria-label="Default select example" name="sex" required>
           <option selected>Open this select gender</option>
           <option value="1">Male</option>
@@ -29,8 +29,8 @@
       </div>
 
       <div class="col-md-6">
-        <label for="bmi" class="form-label text-light">Enter your BMI (Don't know BMI?) <button type="button"
-            class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+        <label for="bmi" class="form-label">Enter your BMI (Don't know BMI?) <button type="button"
+            class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
             style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .50rem;">
             Click here
           </button>
@@ -79,7 +79,7 @@
       </div>
 
       <div class="col-md-6">
-        <label for="smoker" class="form-label text-light">Do you Smoke?</label>
+        <label for="smoker" class="form-label">Do you Smoke?</label>
         <select class="form-select" aria-label="Default select example" name="smoker" required>
           <option selected>Open this select</option>
           <option value="1">Yes</option>
@@ -88,12 +88,12 @@
       </div>
 
       <div class="col-md-6">
-        <label for="children" class="form-label text-light">Enter number of children</label>
+        <label for="children" class="form-label">Enter number of children</label>
         <input type="number" min=0, max=20 class="form-control" id="inputchildren" name="children" required>
       </div>
 
       <div class="col-md-6">
-        <label for="region" class="form-label light text-light">Select your region</label>
+        <label for="region" class="form-label">Select your region</label>
         <select class="form-select" aria-label="Default select example" name="region" required>
           <option selected>Open this select region</option>
           <option value="0">southeast</option>
@@ -104,7 +104,7 @@
       </div>
 
       <div class="col-12 mx-auto" , style="width: 200px;">
-        <button type="submit" id="btnSubmit" class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg"
+        <button type="submit" id="btnSubmit" class="btn btn-outline-success"><svg xmlns="http://www.w3.org/2000/svg"
             width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
               d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
@@ -137,5 +137,25 @@
 </div>
 </div>
 </html>
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">&copy; 2022, Created by Jitendra</p>
+
+    <a href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap" />
+      </svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/analysis" class="nav-link px-2 text-muted">Analysis</a></li>
+      <li class="nav-item"><a href="https://github.com/jitendra25720/InsurancePredictionWebapp"
+          class="nav-link px-2 text-muted">Github</a></li>
+    </ul>
+  </footer>
+</div>
 
 {% endblock body %}
