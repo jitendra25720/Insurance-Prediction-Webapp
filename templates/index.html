@@ -8,19 +8,19 @@
 
 <body>
   <div class="container my-5">
-    <h2 style="font-family:Candara; color: rgba(0, 0, 0, 0.575);">Insurance Premium Prediction</h2>
+    <h2 style="font-family:Candara; color: rgba(0, 0, 0, 0.575);"><strong>Insurance Premium Prediction</strong></h2>
     <h5 style="font-family:Candara; color: rgb(3, 97, 53);" > Project by Jitendra</h5>
   </div>
   <div class="container my-5">
 
     <form class="row g-3" action="/index" method="post">
       <div class="col-md-6">
-        <label for="age" class="form-label"><h6>Enter your age</h6></label>
+        <label for="age" class="form-label" style="font-weight: 600;">Enter your age</label>
         <input type="number" class="form-control" id="inputage" name="age" min=10 max=100 required>
       </div>
 
       <div class="col-md-6">
-        <label for="sex" class="form-label"><h6> Choose your gender</h6></label>
+        <label for="sex" class="form-label" style="font-weight: 600;"> Choose your gender</label>
         <select class="form-select" aria-label="Default select example" name="sex" required>
           <option selected>Open this select gender</option>
           <option value="1">Male</option>
@@ -29,10 +29,10 @@
       </div>
 
       <div class="col-md-6">
-        <label for="bmi" class="form-label"><h6> Enter your BMI (Don't know BMI?) </h6><button type="button"
+        <label for="bmi" class="form-label" style="font-weight: 600;">Enter your BMI <i>(Don't know BMI?)</i>  <button type="button"
             class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
             style="--bs-btn-padding-y: .20rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            Click here
+            Click here!
           </button>
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -79,7 +79,7 @@
       </div>
 
       <div class="col-md-6">
-        <label for="smoker" class="form-label"><h6> Do you Smoke?</h6></label>
+        <label for="smoker" class="form-label" style="font-weight: 600;">Do you Smoke?</label>
         <select class="form-select" aria-label="Default select example" name="smoker" required>
           <option selected>Open this select</option>
           <option value="1">Yes</option>
@@ -88,12 +88,12 @@
       </div>
 
       <div class="col-md-6">
-        <label for="children" class="form-label"><h6> Enter number of children</h6></label>
+        <label for="children" class="form-label" style="font-weight: 600;">Enter number of children</label>
         <input type="number" min=0, max=20 class="form-control" id="inputchildren" name="children" required>
       </div>
 
       <div class="col-md-6">
-        <label for="region" class="form-label"><h6>Select your region</h6> </label>
+        <label for="region" class="form-label" style="font-weight: 600;">Select your region</label>
         <select class="form-select" aria-label="Default select example" name="region" required>
           <option selected>Open this select region</option>
           <option value="0">southeast</option>
@@ -118,7 +118,7 @@
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
         <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
-      </svg>   Predicted value will appear here!
+      </svg>  <strong>Predicted value will appear here!</strong> 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
