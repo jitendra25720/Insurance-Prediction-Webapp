@@ -14,6 +14,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///predictions.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+# Model
+with open('model.pickle', 'rb') as f:
+            mp = pickle.load(f)
+
 class Predictions(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     age = db.Column(db.Integer, nullable=False)
@@ -34,7 +38,7 @@ def login():
     return render_template('index.html')
 
 @app.route('/index', methods=['GET', 'POST'])
-def model():
+def index():
     if request.method=='POST':
         age = request.form['age']
         sex = request.form['sex']
@@ -63,13 +67,13 @@ def model():
         else:
             region_db = "northwest"
 
-        with open('model.pickle', 'rb') as f:
-            mp = pickle.load(f)
         prediction_val = round(float(mp.predict(inputs)),4)
         data = Predictions(age=age, sex=sex_db, bmi=bmi, children=children, smoker=smoker_db, region=region_db, pred=prediction_val)
         db.session.add(data)
         db.session.commit()
     return render_template('index.html', prediction_text="Your insurace premium will be $", prediction_val=prediction_val)
+
+@app.route('/predict')
 
 @app.route('/predictions', methods=['GET','POST'])
 def predictions():
