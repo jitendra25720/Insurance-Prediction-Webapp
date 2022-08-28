@@ -24,15 +24,15 @@ This project is focuses on predicting insurance premium using best regression mo
 **Attributes**
 
 *Numeric attributes*
-- **Age:** Person's age *Int*
-- **BMI:** BMI of the person *Float*
-- **Children:** Number of children *Int*
-- **Expenses:** Insurance premium of person *Float*
+- **Age:** Person's age *(Int)*
+- **BMI:** BMI of the person *(Float)*
+- **Children:** Number of children *(Int)*
+- **Expenses:** Insurance premium of person *(Float)*
 
 *Categorical attributes*
-- **Sex:** Gender of the person *Nominal*
-- **Smoker:** Person is smoker or not? *Nominal*
-- **Region:** Region of the person *Nominal*
+- **Sex:** Gender of the person *(Nominal)*
+- **Smoker:** Person is smoker or not? *(Nominal)*
+- **Region:** Region of the person *(Nominal)*
 
 ## Steps
 
