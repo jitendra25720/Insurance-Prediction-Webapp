@@ -59,9 +59,9 @@ This project is focuses on predicting insurance premium using best regression mo
 ## Model Selection
 
 
-- For Regression *r2_score* metrics is used to select best model.
+- For Regression $R^2$ metrics is used to select best model.
 
-- The best *r2_score* Accuracy Model is used for Model Deployment.
+- The best $R^2$ Accuracy Model is used for Model Deployment.
 
 ## Model Deployment
 
